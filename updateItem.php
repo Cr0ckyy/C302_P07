@@ -9,16 +9,16 @@ $price = $_POST["price"];
 $query = "UPDATE merchandise SET item_name='$itemName', quantity='$quantity', price='$price' WHERE id='$id' ";
 
 $status = mysqli_query($link, $query) or die(mysqli_error($link));
-if($status)
-{
+
+if ($status) {
     $row["status"] = $status;
     $row["message"] = "Record is updated successfully.";
-}else
-{
+} else {
     $row["status"] = $status;
     $row["message"] = "Update unsuccessful.";
 }
 
 mysqli_close($link);
 echo json_encode($row);
+
 ?>

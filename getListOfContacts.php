@@ -12,8 +12,9 @@ while ($row = mysqli_fetch_assoc($result)) {
     $row["mobile"] = strval($row["mobile"]);
     $allUsers[] = $row;
 }
-
+// Closes a previously opened database connection
 mysqli_close($link);
 
+// Returns the JSON representation of a value
 echo json_encode($allUsers);
 ?>
